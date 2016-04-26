@@ -89,8 +89,10 @@ router.post('/poser', function(req, res, next){
 	res.redirect('/');
 });
 
-router.post('/reset'), function(req,res,next){
-	
-}
+router.post('/reset', function(req,res,next){
+	console.log("hello reset");
+	db.collection('users').remove();
+	res.redirect('/');
+});
 
 module.exports = router;

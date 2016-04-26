@@ -89,4 +89,8 @@ router.post('/poser', function(req, res, next){
 	res.redirect('/');
 });
 
+router.post('/reset'), function(req,res,next){
+	
+}
+
 module.exports = router;

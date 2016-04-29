@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="electricProject">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.5/angular-route.js"></script>
+	<!-- <script type="text/javascript" src="myController.js"></script> -->
+	<script type="text/javascript" src="standingsController.js"></script> -->
+	<script type="text/javascript" src="main-controller.js"></script>
+	<!-- <script type="text/javascript" src="server.js"></script> -->
+	
+</head>
+
+<body ng-controller="main-controller">
+	<div class="container" id="navbar-wrapper">
+		<nav class="nav navbar-default navbar-fixed-top" role="navigation">
+    		<div class="container-fluid">
+		        <ul class="nav navbar-nav">
+		        </ul>
+		    </div>
+		</nav>
+
+		<nav class="navbar navbar-default">
+		    <div class="container-fluid">
+		        <div class="nav-bar-header">
+		            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse" aria-expanded="fasle">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		        </div>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<ul class="nav navbar-nav">
+		            <li>
+		                <a class="active" href="./">
+		                    <span class="glyphicon glyphicon-print"></span> Vote!
+		                </a>
+		            </li>
+		            <li>
+		                <a class="active" ng-click="loadStandings();">
+		                    <span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Standings
+		                </a>
+		            </li>
+		            <li>
+		                <a class="active" href="./add">
+		                    <span class="glyphicon glyphicon-plus"></span> Add Pic
+		                </a>
+		            </li>
+		            <li>
+		                <form class="new-user" action="./reset" method="post">
+		                    <span class="glyphicon glyphicon-user space"></span>
+		                    <input class="user-input" type="submit" value="New User"/>
+		                </form>
+		            </li>
+		            <li>
+		                <form class="new-user" action="reset" method="post">
+		                    <span class="glyphicon glyphicon-refresh space"></span>
+		                    <input class="user-input" type="submit" value="Reset Images"/>
+		                </form>
+		            </li>
+		     	</ul>
+		   	</div>
+		</nav>
+	</div>
+ {{message}}
+	<div ng-view>
+	{{message}}
+	</div>
+
+</body>
+</html>

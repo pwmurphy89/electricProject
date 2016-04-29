@@ -1,29 +1,3 @@
-
-//Step ONE: INit app with the express generator--express electricProject.  This will create entire folder structure
-// with everything we need to start making an express web aplliction
-//STep TWO: Add gitignore file that will atleast ignore everything inside node_modules
-//If someone wants to run your app, they can do an npm install themselves
-//STep THREE: Copy the compass boilerplate into the project
-//This will give you access to compass.  You need to change path of css write directory to ../public/stylesheets
-//Init git the repo
-//Step FIVE: npm install ejs --save
-//step SIX: npm install mongodb --save
-//--These will get two more modules from the npm market to use in app
-//STEP SEVEN: npm install
-///--this will install exprress, all its dependenece,s etc./ whatever is inside of package.json
-//STEP EIGHT: Run nodemon
-//STEP NINE: switch templating engine if desire from jade
-//--in appp.js, go down to the app.set and change it from jade to ejs
-//--in the views folder, cahgne the .jade files to .ejs files
-//STEP TEN: in index.ejs, set up common files and include them
-// --head
-//--nav
-//--footer
-//STEP ELEVEN: Set up a wrapper div to hold our voting buttons and image
-//STEP TWEELVE: Style homepage
-//STEP THIRTEEN: Set up and text connection to mongo.
-
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -35,7 +9,11 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
+app.use(function(req, res, next) {
+ res.header("Access-Control-Allow-Origin", "*");
+ res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+ next();
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

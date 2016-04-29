@@ -38,7 +38,7 @@ router.get('/standings', function(req, res, next){
 		standingsArray.sort(function(a,b){
 			return (b.totalVotes - a.totalVotes);
 		})
-		res.render('standings', {theStandings: standingsArray});
+		res.json({theStandings: standingsArray});
 	});
 });
 
